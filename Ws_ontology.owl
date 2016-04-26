@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/utente/ontologies/2016/3/Ws_ontology"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.semanticweb.org/utente/ontologies/2016/3/Ws_ontology">
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Declaration>
+        <Class IRI="#Company"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#End-User"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Programmer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rest"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Soap"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Topic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WSDL"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WebService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WebSite"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#HasBrowsed"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#HasCreated"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#HasDescription"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#HasPost"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#HasProgrammedFor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#HasTopic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#HasUsed"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#HasWorkedFor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#IsRegisteredOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#TalkAbout"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#End-User"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Programmer"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rest"/>
+        <Class IRI="#WebService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Soap"/>
+        <Class IRI="#WebService"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Rest"/>
+        <Class IRI="#Soap"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#HasPost"/>
+        <ObjectProperty IRI="#IsRegisteredOn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#HasProgrammedFor"/>
+        <ObjectProperty IRI="#HasWorkedFor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#HasUsed"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#HasBrowsed"/>
+        <Class IRI="#End-User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#HasCreated"/>
+        <Class IRI="#Programmer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#HasDescription"/>
+        <Class IRI="#Soap"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#HasPost"/>
+        <Class IRI="#WSDL"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#HasProgrammedFor"/>
+        <Class IRI="#Programmer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#HasTopic"/>
+        <Class IRI="#WebService"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#HasUsed"/>
+        <Class IRI="#Programmer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#HasWorkedFor"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#IsRegisteredOn"/>
+        <Class IRI="#WebService"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#TalkAbout"/>
+        <Class IRI="#WebSite"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#HasBrowsed"/>
+        <Class IRI="#WebSite"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#HasCreated"/>
+        <Class IRI="#WebService"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#HasDescription"/>
+        <Class IRI="#WSDL"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#HasPost"/>
+        <Class IRI="#WebSite"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#HasProgrammedFor"/>
+        <Class IRI="#Company"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#HasTopic"/>
+        <Class IRI="#Topic"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#HasUsed"/>
+        <Class IRI="#WebService"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#HasWorkedFor"/>
+        <Class IRI="#Company"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#IsRegisteredOn"/>
+        <Class IRI="#WebSite"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#TalkAbout"/>
+        <Class IRI="#Topic"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
