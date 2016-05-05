@@ -13,28 +13,49 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
-        <NamedIndividual IRI="#Ivan"/>
+        <ObjectProperty IRI="#hasOwned"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#HasUsed"/>
+        <ObjectProperty IRI="#hasUsed"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#HasCreated"/>
+        <DataProperty IRI="#hasName"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Rest"/>
+        <NamedIndividual IRI="#Auchan"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#HasPost"/>
+        <Class IRI="#WebService"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#HasDescription"/>
+        <ObjectProperty IRI="#isPublishedOn"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#IsRegisteredOn"/>
+        <ObjectProperty IRI="#hasHapplyCreated"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#End-User"/>
+        <NamedIndividual IRI="#Facebook"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Amazon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Company"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Calculator_SumWS"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Elian"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Financial_CountWS"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTopic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDevelopedFor"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Person"/>
@@ -43,10 +64,16 @@
         <Class IRI="#Topic"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Programmer"/>
+        <NamedIndividual IRI="#RoleGame_WS"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#HasProgrammedFor"/>
+        <NamedIndividual IRI="#Amazon_WebSite"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBrowsed"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasHired"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Soap"/>
@@ -55,41 +82,109 @@
         <Class IRI="#WSDL"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#WebService"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Company"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Amazon"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#WebSite"/>
+        <ObjectProperty IRI="#hasContractWith"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Luca"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#HasTopic"/>
+        <ObjectProperty IRI="#hasCreated"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#HasWorkedFor"/>
+        <DataProperty IRI="#hasURL"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#HasBrowsed"/>
+        <ObjectProperty IRI="#talksAbout"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#TalkAbout"/>
+        <NamedIndividual IRI="#Alessandro"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Amazon_BillWS"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RoleGame_Topic"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isPassionateAboutRoleGames"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PersonaThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WebSite"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasWorkedFor"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAge"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDescription"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Simone"/>
     </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Google"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isRegisteredOn"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nerd"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ivan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Francesca"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WSDL_Amazon_BillWS"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Martina"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rest"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#End-User"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Developer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GodOfWar_WS"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#reliesOn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSurname"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Nerd"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Developer"/>
+            <DataHasValue>
+                <DataProperty IRI="#isPassionateAboutRoleGames"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Developer"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
     <SubClassOf>
         <Class IRI="#End-User"/>
         <Class IRI="#Person"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Programmer"/>
+        <Class IRI="#Nerd"/>
         <Class IRI="#Person"/>
     </SubClassOf>
     <SubClassOf>
@@ -105,8 +200,52 @@
         <Class IRI="#Soap"/>
     </DisjointClasses>
     <ClassAssertion>
+        <Class IRI="#Developer"/>
+        <NamedIndividual IRI="#Alessandro"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Company"/>
         <NamedIndividual IRI="#Amazon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Soap"/>
+        <NamedIndividual IRI="#Amazon_BillWS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WebSite"/>
+        <NamedIndividual IRI="#Amazon_WebSite"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Company"/>
+        <NamedIndividual IRI="#Auchan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Person"/>
+        <NamedIndividual IRI="#Elian"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Company"/>
+        <NamedIndividual IRI="#Facebook"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Rest"/>
+        <NamedIndividual IRI="#Financial_CountWS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Developer"/>
+        <NamedIndividual IRI="#Francesca"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#End-User"/>
+        <NamedIndividual IRI="#Francesca"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#GodOfWar_WS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Company"/>
+        <NamedIndividual IRI="#Google"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Person"/>
@@ -117,101 +256,310 @@
         <NamedIndividual IRI="#Luca"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Person"/>
+        <Class IRI="#End-User"/>
+        <NamedIndividual IRI="#Martina"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#PersonaThing"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Topic"/>
+        <NamedIndividual IRI="#RoleGame_Topic"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WebService"/>
+        <NamedIndividual IRI="#RoleGame_WS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#End-User"/>
         <NamedIndividual IRI="#Simone"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WSDL"/>
+        <NamedIndividual IRI="#WSDL_Amazon_BillWS"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDevelopedFor"/>
+        <NamedIndividual IRI="#Alessandro"/>
+        <NamedIndividual IRI="#Google"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHapplyCreated"/>
+        <NamedIndividual IRI="#Alessandro"/>
+        <NamedIndividual IRI="#RoleGame_WS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOwned"/>
+        <NamedIndividual IRI="#Amazon"/>
+        <NamedIndividual IRI="#Amazon_WebSite"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isRegisteredOn"/>
+        <NamedIndividual IRI="#Amazon_BillWS"/>
+        <NamedIndividual IRI="#Amazon_WebSite"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#reliesOn"/>
+        <NamedIndividual IRI="#Amazon_BillWS"/>
+        <NamedIndividual IRI="#Financial_CountWS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHapplyCreated"/>
+        <NamedIndividual IRI="#Elian"/>
+        <NamedIndividual IRI="#GodOfWar_WS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#reliesOn"/>
+        <NamedIndividual IRI="#Financial_CountWS"/>
+        <NamedIndividual IRI="#Calculator_SumWS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasWorkedFor"/>
+        <NamedIndividual IRI="#Luca"/>
+        <NamedIndividual IRI="#Amazon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPublishedOn"/>
+        <NamedIndividual IRI="#WSDL_Amazon_BillWS"/>
+        <NamedIndividual IRI="#Amazon_WebSite"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isPassionateAboutRoleGames"/>
+        <NamedIndividual IRI="#Alessandro"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#Elian"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Eliane</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#PersonaThing"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Robot</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#Simone"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Simone</Literal>
+    </DataPropertyAssertion>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#HasPost"/>
-        <ObjectProperty IRI="#IsRegisteredOn"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#HasProgrammedFor"/>
-        <ObjectProperty IRI="#HasWorkedFor"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#HasUsed"/>
+        <ObjectProperty IRI="#hasContractWith"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDevelopedFor"/>
+        <ObjectProperty IRI="#hasWorkedFor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasHapplyCreated"/>
+        <ObjectProperty IRI="#hasCreated"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasUsed"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPublishedOn"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasHired"/>
+        <ObjectProperty IRI="#hasWorkedFor"/>
+    </InverseObjectProperties>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#hasContractWith"/>
+    </SymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#reliesOn"/>
+    </TransitiveObjectProperty>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#HasBrowsed"/>
+        <ObjectProperty IRI="#hasBrowsed"/>
         <Class IRI="#End-User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#HasCreated"/>
-        <Class IRI="#Programmer"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#HasDescription"/>
-        <Class IRI="#Soap"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#HasPost"/>
-        <Class IRI="#WSDL"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#HasProgrammedFor"/>
-        <Class IRI="#Programmer"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#HasTopic"/>
-        <Class IRI="#WebService"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#HasUsed"/>
-        <Class IRI="#Programmer"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#HasWorkedFor"/>
+        <ObjectProperty IRI="#hasContractWith"/>
         <Class IRI="#Person"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#IsRegisteredOn"/>
+        <ObjectProperty IRI="#hasCreated"/>
+        <Class IRI="#Developer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDescription"/>
+        <Class IRI="#Soap"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDevelopedFor"/>
+        <Class IRI="#Developer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasHapplyCreated"/>
+        <Class IRI="#Nerd"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasHired"/>
+        <Class IRI="#Company"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOwned"/>
+        <Class IRI="#Company"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTopic"/>
         <Class IRI="#WebService"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#TalkAbout"/>
+        <ObjectProperty IRI="#hasUsed"/>
+        <Class IRI="#Developer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasWorkedFor"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPublishedOn"/>
+        <Class IRI="#WSDL"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isRegisteredOn"/>
+        <Class IRI="#WebService"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#reliesOn"/>
+        <Class IRI="#WebService"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#talksAbout"/>
         <Class IRI="#WebSite"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#HasBrowsed"/>
+        <ObjectProperty IRI="#hasBrowsed"/>
         <Class IRI="#WebSite"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#HasCreated"/>
+        <ObjectProperty IRI="#hasContractWith"/>
+        <Class IRI="#Company"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCreated"/>
         <Class IRI="#WebService"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#HasDescription"/>
+        <ObjectProperty IRI="#hasDescription"/>
         <Class IRI="#WSDL"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#HasPost"/>
-        <Class IRI="#WebSite"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#HasProgrammedFor"/>
+        <ObjectProperty IRI="#hasDevelopedFor"/>
         <Class IRI="#Company"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#HasTopic"/>
-        <Class IRI="#Topic"/>
+        <ObjectProperty IRI="#hasHapplyCreated"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#WebService"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="#hasTopic"/>
+                <NamedIndividual IRI="#RoleGame_Topic"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#HasUsed"/>
+        <ObjectProperty IRI="#hasHired"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOwned"/>
         <Class IRI="#WebService"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#HasWorkedFor"/>
+        <ObjectProperty IRI="#hasTopic"/>
+        <Class IRI="#Topic"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasUsed"/>
+        <Class IRI="#WebService"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasWorkedFor"/>
         <Class IRI="#Company"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#IsRegisteredOn"/>
+        <ObjectProperty IRI="#isPublishedOn"/>
         <Class IRI="#WebSite"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#TalkAbout"/>
+        <ObjectProperty IRI="#isRegisteredOn"/>
+        <Class IRI="#WebSite"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#reliesOn"/>
+        <Class IRI="#WebService"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#talksAbout"/>
         <Class IRI="#Topic"/>
     </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasAge"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasName"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasSurname"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasAge"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasName"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSurname"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasURL"/>
+        <Class IRI="#WebSite"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isPassionateAboutRoleGames"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAge"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSurname"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasURL"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isPassionateAboutRoleGames"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPublishedOn</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The location in the web where the wsdl is published</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#reliesOn</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">If ws1 relies on ws2, it means that ws1 uses ws2 for its purpose.
+Consequently, if ws1 ---&gt; ws2 and ws2 ---&gt; ws3 THEN ws1 ---&gt; ws3</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
