@@ -13,19 +13,22 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
-        <ObjectProperty IRI="#hasOwnedWebSite"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Google_getUtentiGMail_WS"/>
+        <Class IRI="#GameTopic"/>
     </Declaration>
     <Declaration>
         <Class IRI="#UnaTantum"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Google_getUtentiGMail_WS"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasUsed"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasName"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NewsGameDeveloper"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Persona"/>
@@ -35,12 +38,6 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Auchan"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Sport"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isPublishedOn"/>
     </Declaration>
     <Declaration>
         <Class IRI="#WebService"/>
@@ -61,10 +58,10 @@
         <NamedIndividual IRI="#Elian"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#WSDL_Google_GetUtenti"/>
+        <ObjectProperty IRI="#hasOwnedWS"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasOwnedWS"/>
+        <NamedIndividual IRI="#WSDL_Google_GetUtenti"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Financial_CountWS"/>
@@ -76,10 +73,10 @@
         <ObjectProperty IRI="#hasDevelopedFor"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Topic"/>
+        <NamedIndividual IRI="#RoleGame_WS"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#RoleGame_WS"/>
+        <Class IRI="#Topic"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Amazon_WebSite"/>
@@ -106,13 +103,22 @@
         <Class IRI="#Free"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#hasAmountUnaTantum"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasCreated"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasURL"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#talksAbout"/>
+        <NamedIndividual IRI="#NoPrice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NewsDeveloper"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CompleteDeveloper"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Alessandro"/>
@@ -124,6 +130,9 @@
         <NamedIndividual IRI="#RoleGame_Topic"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SportTopic"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#isPassionateAboutRoleGames"/>
     </Declaration>
     <Declaration>
@@ -133,31 +142,31 @@
         <Class IRI="#Installment"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#WebSite"/>
+        <Class IRI="#PriceValuePartition"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#PriceValuePartition"/>
+        <Class IRI="#SportDeveloper"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasWorkedFor"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#hasAge"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#GameDeveloper"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasAge"/>
+        <Class IRI="#NewsTopic"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasDescription"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Installment_1000"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Simone"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#News"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isRegisteredOn"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Google"/>
@@ -181,7 +190,13 @@
         <NamedIndividual IRI="#Martina"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#hasAmountInstalment"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Rest"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UnaTantum_2000"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Developer"/>
@@ -190,10 +205,10 @@
         <NamedIndividual IRI="#GodOfWar_WS"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#PersonaFisica"/>
+        <Class IRI="#SportGameDeveloper"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Game"/>
+        <Class IRI="#PersonaFisica"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#reliesOn"/>
@@ -202,6 +217,20 @@
         <DataProperty IRI="#hasSurname"/>
     </Declaration>
     <EquivalentClasses>
+        <Class IRI="#Free"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PriceValuePartition"/>
+            <DataExactCardinality cardinality="0">
+                <DataProperty IRI="#hasAmountInstalment"/>
+                <Datatype abbreviatedIRI="xsd:integer"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="0">
+                <DataProperty IRI="#hasAmountUnaTantum"/>
+                <Datatype abbreviatedIRI="xsd:integer"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#GameDeveloper"/>
         <ObjectIntersectionOf>
             <Class IRI="#Developer"/>
@@ -209,9 +238,28 @@
                 <ObjectProperty IRI="#hasCreated"/>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="#hasTopic"/>
-                    <Class IRI="#Game"/>
+                    <Class IRI="#GameTopic"/>
                 </ObjectSomeValuesFrom>
             </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Installment"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PriceValuePartition"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#hasAmountInstalment"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:integer"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minExclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+            <DataExactCardinality cardinality="0">
+                <DataProperty IRI="#hasAmountUnaTantum"/>
+                <Datatype abbreviatedIRI="xsd:integer"/>
+            </DataExactCardinality>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
@@ -222,6 +270,19 @@
                 <DataProperty IRI="#isPassionateAboutRoleGames"/>
                 <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
             </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#NewsDeveloper"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Developer"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasCreated"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasTopic"/>
+                    <Class IRI="#NewsTopic"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
@@ -250,17 +311,88 @@
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SportDeveloper"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Developer"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasCreated"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasTopic"/>
+                    <Class IRI="#SportTopic"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#UnaTantum"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PriceValuePartition"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#hasAmountUnaTantum"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:integer"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minExclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+            <DataExactCardinality cardinality="0">
+                <DataProperty IRI="#hasAmountInstalment"/>
+                <Datatype abbreviatedIRI="xsd:integer"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#UnaTantumPlusInstallment"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PriceValuePartition"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#hasAmountInstalment"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:integer"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minExclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#hasAmountUnaTantum"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:integer"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minExclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#WebService"/>
+        <ObjectUnionOf>
+            <Class IRI="#Rest"/>
+            <Class IRI="#Soap"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#CompleteDeveloper"/>
+        <Class IRI="#Developer"/>
+    </SubClassOf>
     <SubClassOf>
         <Class IRI="#Developer"/>
         <Class IRI="#PersonaFisica"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Game"/>
-        <Class IRI="#Topic"/>
+        <Class IRI="#Free"/>
+        <Class IRI="#PriceValuePartition"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#GameDeveloper"/>
         <Class IRI="#Developer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GameTopic"/>
+        <Class IRI="#Topic"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Installment"/>
@@ -271,7 +403,35 @@
         <Class IRI="#PersonaFisica"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#News"/>
+        <Class IRI="#NewsDeveloper"/>
+        <Class IRI="#Developer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NewsGameDeveloper"/>
+        <Class IRI="#CompleteDeveloper"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NewsGameDeveloper"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCreated"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasTopic"/>
+                <Class IRI="#GameTopic"/>
+            </ObjectSomeValuesFrom>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NewsGameDeveloper"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCreated"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasTopic"/>
+                <Class IRI="#NewsTopic"/>
+            </ObjectSomeValuesFrom>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NewsTopic"/>
         <Class IRI="#Topic"/>
     </SubClassOf>
     <SubClassOf>
@@ -294,14 +454,35 @@
         <Class IRI="#WebService"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Soap"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#hasDescription"/>
-            <Class IRI="#WSDL"/>
-        </ObjectExactCardinality>
+        <Class IRI="#SportDeveloper"/>
+        <Class IRI="#Developer"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Sport"/>
+        <Class IRI="#SportGameDeveloper"/>
+        <Class IRI="#CompleteDeveloper"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SportGameDeveloper"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCreated"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasTopic"/>
+                <Class IRI="#GameTopic"/>
+            </ObjectSomeValuesFrom>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SportGameDeveloper"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCreated"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasTopic"/>
+                <Class IRI="#SportTopic"/>
+            </ObjectSomeValuesFrom>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SportTopic"/>
         <Class IRI="#Topic"/>
     </SubClassOf>
     <SubClassOf>
@@ -311,20 +492,6 @@
     <SubClassOf>
         <Class IRI="#UnaTantumPlusInstallment"/>
         <Class IRI="#PriceValuePartition"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#WebService"/>
-        <ObjectUnionOf>
-            <Class IRI="#Rest"/>
-            <Class IRI="#Soap"/>
-        </ObjectUnionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#WebService"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasPrice"/>
-            <Class IRI="#PriceValuePartition"/>
-        </ObjectSomeValuesFrom>
     </SubClassOf>
     <DisjointClasses>
         <Class IRI="#Free"/>
@@ -339,9 +506,9 @@
         <Class IRI="#UnaTantumPlusInstallment"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#Game"/>
-        <Class IRI="#News"/>
-        <Class IRI="#Sport"/>
+        <Class IRI="#GameTopic"/>
+        <Class IRI="#NewsTopic"/>
+        <Class IRI="#SportTopic"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Installment"/>
@@ -360,12 +527,6 @@
         <Class IRI="#Soap"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#Topic"/>
-        <Class IRI="#WSDL"/>
-        <Class IRI="#WebService"/>
-        <Class IRI="#WebSite"/>
-    </DisjointClasses>
-    <DisjointClasses>
         <Class IRI="#UnaTantum"/>
         <Class IRI="#UnaTantumPlusInstallment"/>
     </DisjointClasses>
@@ -380,10 +541,6 @@
     <ClassAssertion>
         <Class IRI="#Soap"/>
         <NamedIndividual IRI="#Amazon_BillWS"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#WebSite"/>
-        <NamedIndividual IRI="#Amazon_WebSite"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#PersonaGiuridica"/>
@@ -418,6 +575,10 @@
         <NamedIndividual IRI="#Google_getUtentiGMail_WS"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Installment"/>
+        <NamedIndividual IRI="#Installment_1000"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#PersonaFisica"/>
         <NamedIndividual IRI="#Ivan"/>
     </ClassAssertion>
@@ -426,16 +587,24 @@
         <NamedIndividual IRI="#Luca"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Free"/>
+        <NamedIndividual IRI="#NoPrice"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class abbreviatedIRI="owl:Thing"/>
         <NamedIndividual IRI="#PersonaThing"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Game"/>
+        <Class IRI="#GameTopic"/>
         <NamedIndividual IRI="#RoleGame_Topic"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#WebService"/>
         <NamedIndividual IRI="#RoleGame_WS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UnaTantum"/>
+        <NamedIndividual IRI="#UnaTantum_2000"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#WSDL"/>
@@ -458,11 +627,6 @@
         <ObjectProperty IRI="#hasHapplyCreated"/>
         <NamedIndividual IRI="#Alessandro"/>
         <NamedIndividual IRI="#RoleGame_WS"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isRegisteredOn"/>
-        <NamedIndividual IRI="#Amazon_BillWS"/>
-        <NamedIndividual IRI="#Amazon_WebSite"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#reliesOn"/>
@@ -494,11 +658,6 @@
         <NamedIndividual IRI="#Luca"/>
         <NamedIndividual IRI="#Amazon"/>
     </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isPublishedOn"/>
-        <NamedIndividual IRI="#WSDL_Amazon_BillWS"/>
-        <NamedIndividual IRI="#Amazon_WebSite"/>
-    </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#isPassionateAboutRoleGames"/>
         <NamedIndividual IRI="#Alessandro"/>
@@ -515,9 +674,19 @@
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Robot</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#hasAmountUnaTantum"/>
+        <NamedIndividual IRI="#RoleGame_Topic"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#hasName"/>
         <NamedIndividual IRI="#Simone"/>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Simone</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasAmountUnaTantum"/>
+        <NamedIndividual IRI="#UnaTantum_2000"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2000</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasContractWith"/>
@@ -533,10 +702,6 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasUsed"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isPublishedOn"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
@@ -584,10 +749,6 @@
         <Class IRI="#PersonaGiuridica"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasOwnedWebSite"/>
-        <Class IRI="#PersonaGiuridica"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPrice"/>
         <Class IRI="#WebService"/>
     </ObjectPropertyDomain>
@@ -604,20 +765,8 @@
         <Class IRI="#PersonaFisica"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isPublishedOn"/>
-        <Class IRI="#WSDL"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isRegisteredOn"/>
-        <Class IRI="#WebService"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#reliesOn"/>
         <Class IRI="#WebService"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#talksAbout"/>
-        <Class IRI="#WebSite"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasContractWith"/>
@@ -654,10 +803,6 @@
         <Class IRI="#WebService"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasOwnedWebSite"/>
-        <Class IRI="#WebSite"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPrice"/>
         <Class IRI="#PriceValuePartition"/>
     </ObjectPropertyRange>
@@ -674,23 +819,17 @@
         <Class IRI="#PersonaGiuridica"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isPublishedOn"/>
-        <Class IRI="#WebSite"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isRegisteredOn"/>
-        <Class IRI="#WebSite"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#reliesOn"/>
         <Class IRI="#WebService"/>
     </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#talksAbout"/>
-        <Class IRI="#Topic"/>
-    </ObjectPropertyRange>
     <FunctionalDataProperty>
         <DataProperty IRI="#hasAge"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasAmountInstalment"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasAmountUnaTantum"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#hasName"/>
@@ -701,6 +840,14 @@
     <DataPropertyDomain>
         <DataProperty IRI="#hasAge"/>
         <Class IRI="#PersonaFisica"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasAmountInstalment"/>
+        <Class IRI="#PriceValuePartition"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasAmountUnaTantum"/>
+        <Class IRI="#PriceValuePartition"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasName"/>
@@ -712,7 +859,7 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasURL"/>
-        <Class IRI="#WebSite"/>
+        <Class IRI="#WSDL"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#isPassionateAboutRoleGames"/>
@@ -721,6 +868,14 @@
     <DataPropertyRange>
         <DataProperty IRI="#hasAge"/>
         <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAmountInstalment"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAmountUnaTantum"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasName"/>
@@ -738,11 +893,6 @@
         <DataProperty IRI="#isPassionateAboutRoleGames"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#isPublishedOn</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The location in the web where the wsdl is published</Literal>
-    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#reliesOn</IRI>
