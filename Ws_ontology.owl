@@ -37,6 +37,9 @@
         <NamedIndividual IRI="#Auchan"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Sport"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isPublishedOn"/>
     </Declaration>
     <Declaration>
@@ -80,9 +83,6 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Amazon_WebSite"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasBrowsed"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasHired"/>
@@ -142,6 +142,9 @@
         <ObjectProperty IRI="#hasWorkedFor"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#GameDeveloper"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#hasAge"/>
     </Declaration>
     <Declaration>
@@ -149,6 +152,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Simone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#News"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isRegisteredOn"/>
@@ -178,9 +184,6 @@
         <Class IRI="#Rest"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#End-User"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Developer"/>
     </Declaration>
     <Declaration>
@@ -190,11 +193,27 @@
         <Class IRI="#PersonaFisica"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Game"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#reliesOn"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasSurname"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#GameDeveloper"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Developer"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasCreated"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasTopic"/>
+                    <Class IRI="#Game"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#Nerd"/>
         <ObjectIntersectionOf>
@@ -236,12 +255,12 @@
         <Class IRI="#PersonaFisica"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#End-User"/>
-        <Class IRI="#PersonaFisica"/>
+        <Class IRI="#Game"/>
+        <Class IRI="#Topic"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Free"/>
-        <Class IRI="#PriceValuePartition"/>
+        <Class IRI="#GameDeveloper"/>
+        <Class IRI="#Developer"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Installment"/>
@@ -250,6 +269,10 @@
     <SubClassOf>
         <Class IRI="#Nerd"/>
         <Class IRI="#PersonaFisica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#News"/>
+        <Class IRI="#Topic"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PersonaFisica"/>
@@ -276,6 +299,10 @@
             <ObjectProperty IRI="#hasDescription"/>
             <Class IRI="#WSDL"/>
         </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sport"/>
+        <Class IRI="#Topic"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#UnaTantum"/>
@@ -312,6 +339,11 @@
         <Class IRI="#UnaTantumPlusInstallment"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="#Game"/>
+        <Class IRI="#News"/>
+        <Class IRI="#Sport"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#Installment"/>
         <Class IRI="#UnaTantum"/>
     </DisjointClasses>
@@ -326,6 +358,12 @@
     <DisjointClasses>
         <Class IRI="#Rest"/>
         <Class IRI="#Soap"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Topic"/>
+        <Class IRI="#WSDL"/>
+        <Class IRI="#WebService"/>
+        <Class IRI="#WebSite"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#UnaTantum"/>
@@ -368,10 +406,6 @@
         <NamedIndividual IRI="#Francesca"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#End-User"/>
-        <NamedIndividual IRI="#Francesca"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class abbreviatedIRI="owl:Thing"/>
         <NamedIndividual IRI="#GodOfWar_WS"/>
     </ClassAssertion>
@@ -392,24 +426,16 @@
         <NamedIndividual IRI="#Luca"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#End-User"/>
-        <NamedIndividual IRI="#Martina"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class abbreviatedIRI="owl:Thing"/>
         <NamedIndividual IRI="#PersonaThing"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Topic"/>
+        <Class IRI="#Game"/>
         <NamedIndividual IRI="#RoleGame_Topic"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#WebService"/>
         <NamedIndividual IRI="#RoleGame_WS"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#End-User"/>
-        <NamedIndividual IRI="#Simone"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#WSDL"/>
@@ -530,10 +556,6 @@
         <ObjectProperty IRI="#reliesOn"/>
     </TransitiveObjectProperty>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasBrowsed"/>
-        <Class IRI="#End-User"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasContractWith"/>
         <Class IRI="#Persona"/>
     </ObjectPropertyDomain>
@@ -597,10 +619,6 @@
         <ObjectProperty IRI="#talksAbout"/>
         <Class IRI="#WebSite"/>
     </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasBrowsed"/>
-        <Class IRI="#WebSite"/>
-    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasContractWith"/>
         <Class IRI="#Persona"/>
