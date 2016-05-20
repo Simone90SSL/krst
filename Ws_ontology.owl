@@ -13,6 +13,9 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
+        <NamedIndividual IRI="#Discovery_Topic"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#GameTopic"/>
     </Declaration>
     <Declaration>
@@ -25,13 +28,10 @@
         <ObjectProperty IRI="#hasUsed"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasName"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#NewsGameDeveloper"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Persona"/>
+        <DataProperty IRI="#hasName"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasPrice"/>
@@ -55,40 +55,52 @@
         <NamedIndividual IRI="#Calculator_SumWS"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Elian"/>
+        <NamedIndividual IRI="#WSDL_Google_GetUtenti"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasOwnedWS"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#WSDL_Google_GetUtenti"/>
+        <NamedIndividual IRI="#football_topic"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Financial_CountWS"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#LegalEntity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Elisa"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasTopic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isWorkingFor"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasDevelopedFor"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#RoleGame_WS"/>
+        <Class IRI="#Topic"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Topic"/>
+        <NamedIndividual IRI="#RoleGame_WS"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Amazon_WebSite"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Amazon_GetTodayNews_WS"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasHired"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#WSDL"/>
+        <Class IRI="#Soap"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Soap"/>
+        <Class IRI="#WSDL"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasContractWith"/>
@@ -115,6 +127,12 @@
         <NamedIndividual IRI="#NoPrice"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Luigi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Entity"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#NewsDeveloper"/>
     </Declaration>
     <Declaration>
@@ -125,6 +143,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Amazon_BillWS"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Google_SignUp_WS"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#RoleGame_Topic"/>
@@ -142,22 +163,31 @@
         <Class IRI="#Installment"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#PriceValuePartition"/>
+        <NamedIndividual IRI="#Amazon_Order_WS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BigCompany"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SportDeveloper"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#PriceValuePartition"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasWorkedFor"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasAge"/>
+        <Class IRI="#NewsTopic"/>
     </Declaration>
     <Declaration>
         <Class IRI="#GameDeveloper"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#NewsTopic"/>
+        <DataProperty IRI="#hasAge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalPerson"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasDescription"/>
@@ -172,16 +202,13 @@
         <NamedIndividual IRI="#Google"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Nerd"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#Ivan"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Francesca"/>
+        <Class IRI="#Nerd"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#PersonaGiuridica"/>
+        <NamedIndividual IRI="#Francesca"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#WSDL_Amazon_BillWS"/>
@@ -190,10 +217,10 @@
         <NamedIndividual IRI="#Martina"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasAmountInstalment"/>
+        <Class IRI="#Rest"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Rest"/>
+        <DataProperty IRI="#hasAmountInstalment"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#UnaTantum_2000"/>
@@ -208,14 +235,23 @@
         <Class IRI="#SportGameDeveloper"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#PersonaFisica"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#reliesOn"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasSurname"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#BigCompany"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LegalEntity"/>
+            <ObjectMinCardinality cardinality="3">
+                <ObjectInverseOf>
+                    <ObjectProperty IRI="#isWorkingFor"/>
+                </ObjectInverseOf>
+                <Class IRI="#PhysicalPerson"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#Free"/>
         <ObjectIntersectionOf>
@@ -284,13 +320,6 @@
                 </ObjectSomeValuesFrom>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#Persona"/>
-        <ObjectUnionOf>
-            <Class IRI="#PersonaFisica"/>
-            <Class IRI="#PersonaGiuridica"/>
-        </ObjectUnionOf>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#PriceValuePartition"/>
@@ -380,7 +409,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Developer"/>
-        <Class IRI="#PersonaFisica"/>
+        <Class IRI="#PhysicalPerson"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Free"/>
@@ -399,8 +428,12 @@
         <Class IRI="#PriceValuePartition"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#LegalEntity"/>
+        <Class IRI="#Entity"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Nerd"/>
-        <Class IRI="#PersonaFisica"/>
+        <Class IRI="#PhysicalPerson"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#NewsDeveloper"/>
@@ -435,19 +468,15 @@
         <Class IRI="#Topic"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#PersonaFisica"/>
-        <Class IRI="#Persona"/>
+        <Class IRI="#PhysicalPerson"/>
+        <Class IRI="#Entity"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#PersonaFisica"/>
+        <Class IRI="#PhysicalPerson"/>
         <DataSomeValuesFrom>
             <DataProperty IRI="#hasAge"/>
             <Datatype abbreviatedIRI="xsd:int"/>
         </DataSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PersonaGiuridica"/>
-        <Class IRI="#Persona"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Rest"/>
@@ -519,8 +548,8 @@
         <Class IRI="#UnaTantumPlusInstallment"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#PersonaFisica"/>
-        <Class IRI="#PersonaGiuridica"/>
+        <Class IRI="#LegalEntity"/>
+        <Class IRI="#PhysicalPerson"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Rest"/>
@@ -535,7 +564,7 @@
         <NamedIndividual IRI="#Alessandro"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#PersonaGiuridica"/>
+        <Class IRI="#LegalEntity"/>
         <NamedIndividual IRI="#Amazon"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -543,15 +572,27 @@
         <NamedIndividual IRI="#Amazon_BillWS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#PersonaGiuridica"/>
+        <Class IRI="#Rest"/>
+        <NamedIndividual IRI="#Amazon_GetTodayNews_WS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Rest"/>
+        <NamedIndividual IRI="#Amazon_Order_WS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LegalEntity"/>
         <NamedIndividual IRI="#Auchan"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#PersonaFisica"/>
-        <NamedIndividual IRI="#Elian"/>
+        <Class IRI="#NewsTopic"/>
+        <NamedIndividual IRI="#Discovery_Topic"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#PersonaGiuridica"/>
+        <Class IRI="#PhysicalPerson"/>
+        <NamedIndividual IRI="#Elisa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LegalEntity"/>
         <NamedIndividual IRI="#Facebook"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -567,8 +608,12 @@
         <NamedIndividual IRI="#GodOfWar_WS"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#PersonaGiuridica"/>
+        <Class IRI="#LegalEntity"/>
         <NamedIndividual IRI="#Google"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Soap"/>
+        <NamedIndividual IRI="#Google_SignUp_WS"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Soap"/>
@@ -579,12 +624,16 @@
         <NamedIndividual IRI="#Installment_1000"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#PersonaFisica"/>
+        <Class IRI="#PhysicalPerson"/>
         <NamedIndividual IRI="#Ivan"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#PersonaFisica"/>
+        <Class IRI="#PhysicalPerson"/>
         <NamedIndividual IRI="#Luca"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalPerson"/>
+        <NamedIndividual IRI="#Luigi"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Free"/>
@@ -614,10 +663,72 @@
         <Class IRI="#WSDL"/>
         <NamedIndividual IRI="#WSDL_Google_GetUtenti"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SportTopic"/>
+        <NamedIndividual IRI="#football_topic"/>
+    </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Alessandro"/>
+        <NamedIndividual IRI="#Francesca"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Amazon"/>
+        <NamedIndividual IRI="#Auchan"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Amazon"/>
+        <NamedIndividual IRI="#Facebook"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Amazon"/>
+        <NamedIndividual IRI="#Google"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Amazon_BillWS"/>
+        <NamedIndividual IRI="#Amazon_Order_WS"/>
+        <NamedIndividual IRI="#Calculator_SumWS"/>
+        <NamedIndividual IRI="#Financial_CountWS"/>
+        <NamedIndividual IRI="#GodOfWar_WS"/>
+        <NamedIndividual IRI="#Google_getUtentiGMail_WS"/>
+        <NamedIndividual IRI="#RoleGame_WS"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Auchan"/>
+        <NamedIndividual IRI="#Facebook"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Auchan"/>
+        <NamedIndividual IRI="#Google"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Elisa"/>
+        <NamedIndividual IRI="#Ivan"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Elisa"/>
+        <NamedIndividual IRI="#Luca"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Facebook"/>
+        <NamedIndividual IRI="#Google"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Ivan"/>
+        <NamedIndividual IRI="#Luca"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#RoleGame_Topic"/>
+        <NamedIndividual IRI="#football_topic"/>
+    </DifferentIndividuals>
     <DifferentIndividuals>
         <NamedIndividual IRI="#WSDL_Amazon_BillWS"/>
         <NamedIndividual IRI="#WSDL_Google_GetUtenti"/>
     </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCreated"/>
+        <NamedIndividual IRI="#Alessandro"/>
+        <NamedIndividual IRI="#Google_getUtentiGMail_WS"/>
+    </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasDevelopedFor"/>
         <NamedIndividual IRI="#Alessandro"/>
@@ -629,14 +740,59 @@
         <NamedIndividual IRI="#RoleGame_WS"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isWorkingFor"/>
+        <NamedIndividual IRI="#Alessandro"/>
+        <NamedIndividual IRI="#Google"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOwnedWS"/>
+        <NamedIndividual IRI="#Amazon"/>
+        <NamedIndividual IRI="#Amazon_BillWS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOwnedWS"/>
+        <NamedIndividual IRI="#Amazon"/>
+        <NamedIndividual IRI="#Amazon_GetTodayNews_WS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOwnedWS"/>
+        <NamedIndividual IRI="#Amazon"/>
+        <NamedIndividual IRI="#Amazon_Order_WS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#reliesOn"/>
         <NamedIndividual IRI="#Amazon_BillWS"/>
         <NamedIndividual IRI="#Financial_CountWS"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPrice"/>
+        <NamedIndividual IRI="#Amazon_GetTodayNews_WS"/>
+        <NamedIndividual IRI="#UnaTantum_2000"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopic"/>
+        <NamedIndividual IRI="#Amazon_GetTodayNews_WS"/>
+        <NamedIndividual IRI="#Discovery_Topic"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPrice"/>
+        <NamedIndividual IRI="#Amazon_Order_WS"/>
+        <NamedIndividual IRI="#NoPrice"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopic"/>
+        <NamedIndividual IRI="#Amazon_Order_WS"/>
+        <NamedIndividual IRI="#Discovery_Topic"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasHapplyCreated"/>
-        <NamedIndividual IRI="#Elian"/>
+        <NamedIndividual IRI="#Elisa"/>
         <NamedIndividual IRI="#GodOfWar_WS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isWorkingFor"/>
+        <NamedIndividual IRI="#Elisa"/>
+        <NamedIndividual IRI="#Amazon"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#reliesOn"/>
@@ -649,15 +805,65 @@
         <NamedIndividual IRI="#Google"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCreated"/>
+        <NamedIndividual IRI="#Francesca"/>
+        <NamedIndividual IRI="#Google_SignUp_WS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOwnedWS"/>
+        <NamedIndividual IRI="#Google"/>
+        <NamedIndividual IRI="#Google_SignUp_WS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOwnedWS"/>
+        <NamedIndividual IRI="#Google"/>
+        <NamedIndividual IRI="#Google_getUtentiGMail_WS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasDescription"/>
         <NamedIndividual IRI="#Google_getUtentiGMail_WS"/>
         <NamedIndividual IRI="#WSDL_Google_GetUtenti"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isWorkingFor"/>
+        <NamedIndividual IRI="#Ivan"/>
+        <NamedIndividual IRI="#Amazon"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasWorkedFor"/>
         <NamedIndividual IRI="#Luca"/>
         <NamedIndividual IRI="#Amazon"/>
     </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isWorkingFor"/>
+        <NamedIndividual IRI="#Luca"/>
+        <NamedIndividual IRI="#Amazon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCreated"/>
+        <NamedIndividual IRI="#Luigi"/>
+        <NamedIndividual IRI="#Amazon_Order_WS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopic"/>
+        <NamedIndividual IRI="#RoleGame_WS"/>
+        <NamedIndividual IRI="#football_topic"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasAge"/>
+        <NamedIndividual IRI="#Alessandro"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">25</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#Alessandro"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Alessandro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasSurname"/>
+        <NamedIndividual IRI="#Alessandro"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Valori</Literal>
+    </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#isPassionateAboutRoleGames"/>
         <NamedIndividual IRI="#Alessandro"/>
@@ -665,18 +871,13 @@
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#hasName"/>
-        <NamedIndividual IRI="#Elian"/>
+        <NamedIndividual IRI="#Elisa"/>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Eliane</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#hasName"/>
         <NamedIndividual IRI="#PersonaThing"/>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Robot</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#hasAmountUnaTantum"/>
-        <NamedIndividual IRI="#RoleGame_Topic"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2000</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#hasName"/>
@@ -704,6 +905,10 @@
         <ObjectProperty IRI="#hasUsed"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isWorkingFor"/>
+        <ObjectProperty IRI="#hasWorkedFor"/>
+    </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasHired"/>
         <ObjectProperty IRI="#hasWorkedFor"/>
@@ -714,15 +919,21 @@
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasPrice"/>
     </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isWorkingFor"/>
+    </FunctionalObjectProperty>
     <SymmetricObjectProperty>
         <ObjectProperty IRI="#hasContractWith"/>
     </SymmetricObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#reliesOn"/>
     </TransitiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasContractWith"/>
+    </IrreflexiveObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasContractWith"/>
-        <Class IRI="#Persona"/>
+        <Class IRI="#Entity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasCreated"/>
@@ -742,11 +953,11 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasHired"/>
-        <Class IRI="#PersonaGiuridica"/>
+        <Class IRI="#LegalEntity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasOwnedWS"/>
-        <Class IRI="#PersonaGiuridica"/>
+        <Class IRI="#LegalEntity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPrice"/>
@@ -762,7 +973,11 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasWorkedFor"/>
-        <Class IRI="#PersonaFisica"/>
+        <Class IRI="#PhysicalPerson"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isWorkingFor"/>
+        <Class IRI="#PhysicalPerson"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#reliesOn"/>
@@ -770,7 +985,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasContractWith"/>
-        <Class IRI="#Persona"/>
+        <Class IRI="#Entity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasCreated"/>
@@ -782,7 +997,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasDevelopedFor"/>
-        <Class IRI="#PersonaGiuridica"/>
+        <Class IRI="#LegalEntity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasHapplyCreated"/>
@@ -796,7 +1011,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasHired"/>
-        <Class IRI="#PersonaFisica"/>
+        <Class IRI="#PhysicalPerson"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasOwnedWS"/>
@@ -816,7 +1031,11 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasWorkedFor"/>
-        <Class IRI="#PersonaGiuridica"/>
+        <Class IRI="#LegalEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isWorkingFor"/>
+        <Class IRI="#LegalEntity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#reliesOn"/>
@@ -839,7 +1058,7 @@
     </FunctionalDataProperty>
     <DataPropertyDomain>
         <DataProperty IRI="#hasAge"/>
-        <Class IRI="#PersonaFisica"/>
+        <Class IRI="#PhysicalPerson"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasAmountInstalment"/>
@@ -851,11 +1070,11 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasName"/>
-        <Class IRI="#PersonaFisica"/>
+        <Class IRI="#PhysicalPerson"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasSurname"/>
-        <Class IRI="#PersonaFisica"/>
+        <Class IRI="#PhysicalPerson"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasURL"/>
@@ -863,7 +1082,7 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#isPassionateAboutRoleGames"/>
-        <Class IRI="#PersonaFisica"/>
+        <Class IRI="#PhysicalPerson"/>
     </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#hasAge"/>
